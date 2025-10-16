@@ -12,7 +12,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-gray-50 text-gray-900">
         <nav className="bg-white shadow p-4">
-          <Link href="/" className="text-lg font-bold">Home</Link>
+          <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          />
+          <Link href="/" className="text-lg font-bold"> <i className='fas fa-home'></i> <span> Home</span></Link>
         </nav>
         <main>{children}</main>
         {/* Footer */}
