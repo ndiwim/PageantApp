@@ -1,6 +1,15 @@
 // app/event/[slug]/page.js
 import Image from 'next/image'
 
+export async function generateStaticParams() {
+  const res = await fetch('https://votelog.tsdevcut.co.za/wp-json/ts/pageant/models/v1/occassions')
+  const data = await res.json()
+
+  return data.map(event => ({
+    slug: event.slug,
+  }))
+}
+
 async function getEvent(slug) {
   const res = await fetch('https://votelog.tsdevcut.co.za/wp-json/ts/pageant/models/v1/occassions')
   const data = await res.json()
